@@ -21,7 +21,6 @@ export class CategorysComponent implements OnInit {
   getCategorys() {
     //Se llama la funcion httpget establecida en el service para consultar los datos, luego los datos se guardan en la variable categorys products para ser utilizados en el html
     this.service.httpGet('categories').subscribe((resp: any) => {
-      console.log(resp)
       this.categorys = resp
     })
   }

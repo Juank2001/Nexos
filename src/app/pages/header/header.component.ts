@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
     let cart = JSON.parse(localStorage.getItem('cart') || "[]")
     this.numItemsCart = cart.length
     this.service.cartChange.subscribe((resp: any) => {
-      console.log(resp)
       this.numItemsCart = resp
     })
   }

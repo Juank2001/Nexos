@@ -23,7 +23,6 @@ export class ProductComponent implements OnInit {
   getproduct(id: any) {
     //Se envia el endpoint para filtrar los productos desde la api
     this.service.httpGet('products/' + id).subscribe((resp: any) => {
-      console.log(resp)
       this.currentImg = resp.images[0]
       this.product = resp
     })

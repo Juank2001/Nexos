@@ -18,7 +18,6 @@ export class CartComponent implements OnInit {
   getcart() {
     //Se llama la funcion httpget establecida en el service para consultar los datos, luego los datos se guardan en la variable carts products para ser utilizados en el html
     this.carts = JSON.parse(localStorage.getItem('cart') || "[]")
-    console.log(this.carts)
   }
 
   deleteProd(id: any) {
