@@ -1,0 +1,15 @@
+<div class="menu">
+  <!--Se crea el menu con los items a utilizar-->
+  <nav>
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">Inicio</a></li>
+      <li><a routerLink="/categorys" routerLinkActive="active">Categorias</a></li>
+      <li><a routerLink="/products" routerLinkActive="active">Productos</a></li>
+    </ul>
+  </nav>
+  <div>
+    <ul>
+      <li><a routerLink="/cart" style="color:#fff; font-size: 200%;"><i class="fa fa-duotone fa-cart-plus"></i><span class="badge">{{numItemsCart}}</span></a></li>
+    </ul>
+  </div>
+</div>

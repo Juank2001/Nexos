@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div>
+  <div class="search">
+    <!--Se crea el input para filtrar por nombre, la paginacion y la limitacion de productos a visualizar-->
+    <input type="text" placeholder="Buscar" (keyup)="search($event)">
+    <select (change)="setlimit($event)" *ngIf="!isCategory">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+    </select>
+
+    <div class="pagination" *ngIf="!isCategory">
+      <a (click)="offset <= 0 ? offset = 0: offset = offset - 10; getProducts()"
+        style="border-right: none; border-top-left-radius: 5px; border-bottom-left-radius: 5px;">&laquo;</a>
+      <a (click)="offset = offset + 10; getProducts()"
+        style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;">&raquo;</a>
+    </div>
+  </div>
+  <!--Se agregan los productos en forma de tarjeta-->
+  <div class="content" *ngIf="products.length > 0">
+    <div class="card" *ngFor="let product of products">
+      <img [src]="product.images[0]" alt="image" (click)="openProduct(product.id)">
+      <h2 (click)="openProduct(product.id)">{{product.title}}</h2>
+      <p (click)="openProduct(product.id)">{{product.description}}</p>
+      <div class="info-bottom">
+        <div>
+          <div>Categoria: <b>{{product.category.name}}</b></div>
+          <div>Precio: <b>{{product.price | currency}}</b></div>
+        </div>
+        <div class="btn_roundb"><a (click)="AddCart(product)" class="btn_roundf"><i class="fa fa-duotone fa-cart-plus"></i></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-2" *ngIf="products.length == 0">
+    <h3>No hay productos para mostrar</h3>
+  </div>
+</div>

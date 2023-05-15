@@ -1,0 +1,43 @@
+.menu{
+  background: #0c0c0c;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.menu nav ul li a {
+  font-size: 15px;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+
+
+
+.menu nav ul, div ul{
+  list-style: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+
+  padding: 22px 0 22px 0;
+}
+
+.active{
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+.badge {
+  background-color: red;
+  color: white;
+  padding: 3px 6px;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  font-size: 10px;
+}

@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div>
+  <!--Se agregan las categorias dinamicamente en las tarjetas-->
+  <div class="content">
+    <div class="card" *ngFor="let category of categorys" (click)="openProducts(category.id)">
+      <img [src]="category.image" alt="image">
+      <h2>{{category.name}}</h2>
+    </div>
+  </div>
+</div>

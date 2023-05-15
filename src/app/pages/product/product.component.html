@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<!--Se muestra la informacion del producto, para las imagenes se deja una imagen inicial y las otras debajo para seleccionarlas-->
+<div class="container">
+  <div class="contenedor">
+    <div class="Images-g">
+      <img [src]="currentImg" alt="Image" class="image">
+      <div class="images" *ngIf="product">
+        <div *ngFor="let img of product.images" class="img" (click)="setCurrentImg(img)"> <img [src]="img" alt="image"></div>
+      </div>
+    </div>
+    <div class="content">
+      <h1>{{product.title}}</h1>
+      <p>{{product.description}}</p>
+      <div class="info"> <div><i class="fa-sharp fa-solid fa-tag"></i> <b>{{product.category.name}}</b></div><div>Precio: {{product.price | currency}}</div></div>
+      <div class="btn_roundb"><a (click)="AddCart(product)" class="btn_roundf"><i class="fa fa-duotone fa-cart-plus"></i></a></div>
+    </div>
+  </div>
+  <div></div>
+</div>

@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="container">
+  <h2>Carrito de compras</h2>
+  <!--Se agregan los productos dinamicamente en la lista ul-->
+  <div class="items" *ngIf="carts.length > 0">
+    <ul>
+      <li *ngFor="let cart of carts">
+        <div class="img" (click)="openProduct(cart.id)"><img [src]="cart.images[0]" alt="Image"></div>
+        <div class="body-info">
+          <div class="info" (click)="openProduct(cart.id)">
+            <h3>{{ cart.name }}</h3>
+            <p>{{ cart.description }}</p>
+          </div>
+          <div>
+            Cant: {{cart.cant}}
+          </div>
+          <div>c/u ${{cart.price}}</div>
+          <div>${{cart.price * cart.cant}}</div>
+          <div><a (click)="deleteProd(cart.id)"><i class="fa-solid fa-trash"></i></a></div>
+        </div>
+        <div>
+
+        </div>
+      </li>
+    </ul>
+    <div><Button>Comprar</Button></div>
+  </div>
+  <div *ngIf="carts.length == 0"> <h3>El carrito esta vacio</h3></div>
+</div>
